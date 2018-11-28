@@ -1,11 +1,12 @@
-var slide = document.getElementById('slide');
+window.onload = function() {
+var slider = document.getElementById('slider');
 var arrowNext = document.getElementById('next');
 var arrowPrev = document.getElementById('prev');
 
 arrowNext.onclick = function() {
   slide(1);
 }
-arrowNext.onclick = function() {
+arrowPrev.onclick = function() {
   slide(-1);
 }
 
@@ -17,7 +18,8 @@ var images = [
 ];
 var imgIndex = 0;
 var slide = function(d) {
-  slide.src = images[imgIndex += d];
-  // TODO: disable arrows when first or last image displayed
+  imgIndex += d;
+  slider.src = images[imgIndex];
 }
 
+}
