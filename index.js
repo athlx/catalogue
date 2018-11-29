@@ -1,6 +1,7 @@
 window.onload = function() {
 	var slider = document.getElementById('slider');
 	var imageNum = document.getElementById('num');
+	var imageDesc = document.getElementById('desc');
 	var arrowNext = document.getElementById('next');
 	var arrowPrev = document.getElementById('prev');
 	
@@ -11,19 +12,15 @@ window.onload = function() {
   		slide(-1);
 	}
 	
-	var images = [
-		"#",
-		"#",
-		"#",
-		"#"
-	];
 	var imgIndex = 0;
 	var slide = function(d) {
 		imgTotal = images.length;
 		imgIndex += d;
-		slider.src = images[imgIndex];
+		img = images[imgIndex];
+		slider.src = img.url;
 		altText = 'Image ' + (imgIndex+1) + ' of ' + imgTotal;
-		slider.alt = altText;
+		slider.alt = img.desc;
 		imageNum.innerHTML = altText;
+		imageDesc.innerHTML = img.desc;
 	}
 }
